@@ -2,10 +2,10 @@ const fs = require("fs");
 
 module.exports = {
   name: "help",
-  description: "Show a list of commands",
-  usage: "/help OR /help <command>",
-  example: "/help OR /help aur",
-  category: "Utilities",
+  description: "显示所有可用命令的列表",
+  usage: "/help 或 /help <command>",
+  example: "/help 或 /help aur",
+  category: "实用工具",
   handler: async (ctx) => {
     const { message } = ctx;
     const { text } = message;
@@ -33,7 +33,7 @@ module.exports = {
       }
 
       let output =
-        "Here's the list of commands you can use, categorized by their category:\n\n";
+        "以下是您可以使用的命令列表，按类别分类：\n\n";
       for (const category of categories) {
         output += `<b>${category}</b>:\n`;
         for (const command of commands) {
@@ -63,15 +63,15 @@ module.exports = {
       );
 
       if (commandDetail) {
-        let output = `*Command:* /${commandDetail.name}\n`;
-        output += `*Description:* ${commandDetail.description}\n`;
-        output += `*Usage:* \`${commandDetail.usage}\`\n`;
-        output += `*Example:* \`${commandDetail.example}\`\n`;
+        let output = `*命令:* /${commandDetail.name}\n`;
+        output += `*描述:* ${commandDetail.description}\n`;
+        output += `*用法:* \`${commandDetail.usage}\`\n`;
+        output += `*示例:* \`${commandDetail.example}\`\n`;
 
         await ctx.reply(output, { parse_mode: "MarkdownV2" });
       } else {
         await ctx.reply(
-          `Command <code>${command}</code> not found!\nRun /help to see all the commands.`,
+          `未找到命令 <code>${command}</code>！\n运行 /help 查看所有命令。`,
           {
             parse_mode: "HTML",
           }
