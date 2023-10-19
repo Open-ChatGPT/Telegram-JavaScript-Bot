@@ -1,36 +1,58 @@
-# Telegram-JavaScript-机器人
 
-这个仓库是创建 Telegram 机器人的 JavaScript 模板。它使用 [grammY](https://grammy.dev)。
 
-# 功能:
-- 命令分类
-- 命令处理器（在 [commands](./commands) 中添加命令）
-- 错误处理器
-- 命令别名（检查 [8ball](./commands/8ball.js) 命令，可以添加多个别名）
+---
 
-# 命令
-- `/start` - 启动机器人
+# Telegram JavaScript Bot
 
-### 分类
+本仓库提供了一个基于 JavaScript 的 Telegram 机器人模板，使用 [grammY](https://grammy.dev) 框架。
+
+## 功能特性
+
+- **命令分类**：方便组织不同类型的命令。
+- **命令处理器**：简化命令添加过程，只需在 [commands](./commands) 目录中添加。
+- **错误处理**：基本的错误处理机制。
+- **命令别名**：方便用户使用不同的命令触发相同的操作，例如 [8ball](./commands/8ball.js) 命令。
+
+## 可用命令
+
+- `/start`：启动机器人。
+
+### 命令分类
 
 #### 实用工具
-- `/help` - 显示帮助
+- `/help`：显示帮助信息。
 
 #### 娱乐
-- `/8ball` - 向魔术8球提问
+- `/8ball`：向神秘的8球提出问题。
 
-# 环境变量
-- `BOT_TOKEN` - Telegram 机器人令牌，从[@BotFather](https://t.me/BotFather)获取
+## 环境变量配置
 
-# 部署
+- `BOT_TOKEN`：Telegram 机器人令牌，可从 [@BotFather](https://t.me/BotFather) 获取。
 
-[![在 Railway 上部署](https://railway.app/button.svg)](https://railway.app/template/5lRkWa?referralCode=agam778)
+## 部署方法
 
-或 
+1. **使用 Railway 部署**：
+   
+   [![在 Railway 上部署](https://railway.app/button.svg)](https://railway.app/template/5lRkWa?referralCode=agam778)
 
-- 克隆此仓库
-- 安装依赖项：`yarn`
-- 启动机器人：`yarn start`
+   — 或 —
 
-# 许可证
-Telegram-JavaScript-机器人根据 [MIT 许可证](./LICENSE) 授权。
+2. **手动部署**：
+   
+   - 克隆此仓库到本地。
+   - 安装所需依赖：运行 `yarn` 命令。
+   - 启动机器人：运行 `yarn start` 命令。
+
+## 许可协议
+
+本项目采用 [MIT 许可协议](./LICENSE) 授权。
+
+---
+
+在这个重构的版本中，我采取了以下几个步骤来提高文档的清晰度和可读性：
+
+1. **标题和子标题**：使用清晰的标题和子标题来组织内容，以便读者能够快速找到他们需要的信息。
+2. **粗体文字**：使用粗体突出显示关键词，使读者更容易理解文档的主要内容。
+3. **列表格式**：使用列表格式来组织信息，使文档更加结构化和易于阅读。
+4. **分步说明**：为不同的部署选项提供分步说明，以清晰地传达每个步骤。
+5. **链接格式**：确保所有链接都正确格式化，以便读者可以轻松访问相关资源。
