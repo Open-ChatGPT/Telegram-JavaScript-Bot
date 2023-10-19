@@ -9,7 +9,7 @@ if (fs.existsSync(".env")) {
 
 const botToken = process.env.BOT_TOKEN;
 if (!botToken) {
-  throw new Error("BOT_TOKEN is not set in environment variables! Exiting...");
+  throw new Error("环境变量中未设置 BOT_TOKEN！退出...");
 }
 
 async function start() {
@@ -37,19 +37,19 @@ async function start() {
   }
 
   bot.command("start", (ctx) =>
-    ctx.reply("Hello!\n\n" + "Run the /help command to see what I can do!")
+    ctx.reply("你好！\n\n" + "运行 /help 命令以查看我能做什么！")
   );
 
   bot.catch((err) => {
     const ctx = err.ctx;
-    console.error(`Error while handling update ${ctx.update.update_id}:`);
+    console.error(`处理更新 ${ctx.update.update_id} 时出错：`);
     const e = err.error;
     if (e instanceof GrammyError) {
-      console.error("Error in request:", e.description);
+      console.error("请求中的错误：", e.description);
     } else if (e instanceof HttpError) {
-      console.error("Could not contact Telegram:", e);
+      console.error("无法联系 Telegram：", e);
     } else {
-      console.error("Unknown error:", e);
+      console.error("未知错误：", e);
     }
   });
 
@@ -62,16 +62,16 @@ async function start() {
   });
 
   process.on("SIGINT", () => {
-    console.log("Stopping...");
+    console.log("正在停止...");
     bot.stop();
     process.exit(0);
   });
 
-  console.log("Starting the bot...");
+  console.log("正在启动机器人...");
   await bot.start();
 }
 
 start().catch((error) => {
-  console.error("Error occurred during bot startup:", error);
+  console.error("机器人启动期间发生错误：", error);
   process.exit(1);
 });
